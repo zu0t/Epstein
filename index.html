@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Epstein List Lookup</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Segoe UI", sans-serif;
+            background: #0c0f14;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 32px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .box {
+            background: #11151d;
+            padding: 25px;
+            width: 320px;
+            border-radius: 10px;
+            box-shadow: 0 0 25px rgba(0,0,0,0.4);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        textarea {
+            width: 94%;
+            height: 80px;
+            border-radius: 6px;
+            border: none;
+            outline: none;
+            padding: 10px;
+            font-size: 16px;
+            resize: none;
+            background: #1a1f27;
+            color: white;
+        }
+
+        button {
+            margin-top: 12px;
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            background: #3b82f6;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        button:hover {
+            background: #2563eb;
+        }
+
+        #answer {
+            margin-top: 15px;
+            font-weight: bold;
+            text-align: center;
+            color: #f87171;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <h1>Epstein List Lookup</h1>
+
+        <textarea id="hlavni" placeholder="Name:"></textarea>
+
+        <button onclick="vypocet()">LookUp</button>
+
+        <p id="answer"></p>
+    </div>
+
+    <script>
+        function vypocet() {
+            const hlavni = document.getElementById("hlavni").value.trim();
+            if (hlavni === "") {
+                document.getElementById("answer").textContent = "Provide us with name.";
+                return;
+            }
+
+            document.getElementById("answer").textContent =
+                hlavni + " is on the Epstein list";
+        }
+    </script>
+</body>
+</html>
+
